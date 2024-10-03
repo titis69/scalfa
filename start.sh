@@ -328,7 +328,7 @@ TIMEZONE=$(printf '%(%H:%M:%S)T')
 <code>Time     :</code><code>$TIMEZONE</code>
 <code>Exp Sc.  :</code><code>$exp</code>
 <code>─────────────────────────────</code>
-<b> HOKAGE LEGEND VPN STORE SCRIPT  </b>
+<b>   BERLIAN VPN STORE SCRIPT     </b>
 <code>─────────────────────────────</code>
 <i>Automatic Notifications From Github</i>
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"t.me/ohmyvillain"}]]}' 
@@ -538,7 +538,7 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service Limit IP & Quota"
-wget -q https://raw.githubusercontent.com/hokagelegend9999/alpha/main/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
+wget -q https://raw.githubusercontent.com/titis69/scalfa/main/config/fv-tunnel && chmod +x fv-tunnel && ./fv-tunnel
 
 # // Installing UDP Mini
 mkdir -p /usr/local/kyt/
@@ -1016,7 +1016,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ SCRIPT BY HOKAGE LEGEND ]-==============="
+echo "=================-[ SCRIPT BY BERLIAN ]-=================="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
