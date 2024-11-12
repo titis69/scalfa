@@ -193,7 +193,7 @@ echo -e "           ${z}$NC [${r}01${NC}]$green MENU SSH$NC     ${z}│$NC [${r}
 echo -e "           ${z}$NC [${r}02${NC}]$green MENU VMESS$NC   ${z}│$NC [${r}06${NC}]$green MENU NOOBZVPN$NC ${z}$NC"
 echo -e "           ${z}$NC [${r}03${NC}]$green MENU VLESS$NC   ${z}│$NC [${r}07${NC}]$green SPEEDTEST$NC ${z} $NC"
 echo -e "           ${z}$NC [${r}04${NC}]$green MENU TROJAN$NC  ${z}│$NC [${r}08${NC}]$green MENU UTILITY$NC ${z} $NC"
-echo -e "           ${z}$NC [${r}010${NC}]$green coba setN$NC  ${z}│
+echo -e "           ${z}$NC [${r}010${NC}]$green coba setN$NC  ${z} $NC"
 echo -e "    ${z}══════════════════════════════════════════════════════${NC}"
 echo -e "            ${KIRI}${z} INFORMATION YOUR ACTIVE PERIOD ${z}${KANAN}"
 echo -e " ${z}╭══════════════════════════════════════════════════════════╮${NC}"
