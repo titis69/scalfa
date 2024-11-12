@@ -39,6 +39,7 @@ res1() {
     rm -rf fv-tunnel
     cd /usr/local/sbin
     rm -rf menu
+    rm -rf menu-x
     rm -rf m-sshws
     rm -rf addssh
     rm -rf addtr
