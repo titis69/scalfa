@@ -58,7 +58,7 @@ clear
 
 
 
-REPO="https://raw.githubusercontent.com/titis69/sctitis/main/cfgx/"
+REPO="https://raw.githubusercontent.com/titis69/scalfa/main/config/"
 # fixhap fix Haproxy
 clear
 echo -e "${BlueCyan} ------------------------- ${Xark} "
