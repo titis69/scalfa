@@ -39,7 +39,6 @@ res1() {
     rm -rf fv-tunnel
     cd /usr/local/sbin
     rm -rf menu
-    rm -rf menu-x
     rm -rf m-sshws
     rm -rf addssh
     rm -rf addtr
@@ -56,7 +55,6 @@ res1() {
     wget https://raw.githubusercontent.com/titis69/scalfa//main/menu/backup
     wget https://raw.githubusercontent.com/titis69/scalfa//main/menu/regis
     wget https://raw.githubusercontent.com/titis69/scalfa//main/menu/addhost
-    wget https://raw.githubusercontent.com/titis69/scalfa//main/menu/menu-x
     chmod +x menu
     chmod +x m-sshws
     chmod +x addssh
@@ -66,7 +64,6 @@ res1() {
     chmod +x backup
     chmod +x regis
     chmod +x addhost
-    chmod +x menu-x
    
 }
 function noobzvpn() {
