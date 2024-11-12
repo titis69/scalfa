@@ -129,7 +129,7 @@ echo -e "   ${z}$NC [${f}02${NC}]$grenbo MENU DELL USER EXP$NC ${z}$NC  [${f}09$
 echo -e "   ${z}$NC [${f}03${NC}]$grenbo MENU AUTO REBOOT$NC  ${z} $NC  [${f}10${NC}]$purple RUNNING$NC" 
 echo -e "   ${z}$NC [${f}04${NC}]$grenbo MENU RESTART SERVICE$NC${z}$NC [${f}11${NC}]$purple REGIST IP$NC"
 echo -e "   ${z}$NC [${f}05${NC}]$grenbo MENU BOT TELEGRAM$NC ${z} $NC  [${f}12${NC}]$purple UPDATE SCRIPT$NC"
-echo -e "   ${z}$NC [${f}06${NC}]$grenbo CHANGE BANNER$NC    ${z} $NC   [${f}13${NC}]$purple FIX CERT SSL$NC"
+echo -e "   ${z}$NC [${f}06${NC}]$grenbo CHANGE BANNER$NC    ${z} $NC   [${f}13${NC}]$purple FIX HAP$NC"
 echo -e "   ${z}$NC [${f}07${NC}]$grenbo INFO PORT$NC         ${z} $NC  [${f}14${NC}]$purple INSTALL UDP$NC"
 echo -e "   ${z}$NC [${f}07${NC}]$grenbo INFO PORT$NC         ${z} $NC  [${f}15${NC}]$purple FIX HAP$NC"
 echo -e " ${YELL}╰══════════════════════════════════════════════════╯${NC}"
@@ -242,7 +242,7 @@ chmod +x update.sh
 ;;
 13)
 clear
-fixcert
+fixhap
 ;;
 14)
 clear
