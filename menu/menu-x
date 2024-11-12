@@ -283,7 +283,7 @@ wget --load-cookies /tmp/cookies.txt ${UDPX} -O install-udp && rm -rf /tmp/cooki
 ;;
 15)
 clear
-fixcert
+fixchap
 ;;
 0 | 00)
 exit
