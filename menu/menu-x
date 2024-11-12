@@ -134,7 +134,7 @@ echo -e "   ${z}$NC [${f}07${NC}]$grenbo INFO PORT$NC         ${z} $NC  [${f}14$
 echo -e "   ${z}$NC [${f}07${NC}]$grenbo INFO PORT$NC         ${z} $NC  [${f}15${NC}]$purple FIX HAP$NC"
 echo -e " ${YELL}╰══════════════════════════════════════════════════╯${NC}"
 echo -e "   ${y} ════════════════════════════════════════════"
-echo -e "   ${r} PILIH MENU DENGAN CARA KETIK 1/14 LALU ENTER $NC"
+echo -e "   ${r} PILIH MENU DENGAN CARA KETIK 1/15 LALU ENTER $NC"
 echo -e "   ${y} ════════════════════════════════════════════"
 echo -e "   ${Blue}╭═══════════════════════════════════════${NC}"
 echo -e "   ${Blue}│$NC${f} Developer$NC  ${z}=$NC Hokage"
