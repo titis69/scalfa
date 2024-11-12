@@ -245,7 +245,7 @@ menu
 clear
 menu-x
 ;;
-10 | 08)
+10 | 10)
 clear
 m-ftr
 ;;
