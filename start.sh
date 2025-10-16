@@ -191,7 +191,7 @@ function nginx_install() {
     # // Checking System
     if [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "ubuntu" ]]; then
         print_install "Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
-        # // sudo add-apt-repository ppa:nginx/stable -y 
+        sudo add-apt-repository ppa:nginx/stable -y 
         sudo apt-get install nginx -y 
     elif [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "debian" ]]; then
         print_success "Setup nginx For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
@@ -311,9 +311,9 @@ else
 sts="${Error}"
 fi
 TIMES="10"
-CHATID="1469244768"
-KEY="7035119506:AAEatu58omJunqReXanKi1mRZZgAcFkE7XQ"
-URL="https://api.telegram.org/bot$KEY/sendMessage"
+#CHATID="1469244768"
+#KEY="7035119506:AAEatu58omJunqReXanKi1mRZZgAcFkE7XQ"
+#URL="https://api.telegram.org/bot$KEY/sendMessage"
 ISP=$(cat /root/.isp)
 CITY=$(cat /root/.city)
 TIMEZONE=$(printf '%(%H:%M:%S)T')
