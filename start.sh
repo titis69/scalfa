@@ -267,8 +267,6 @@ clear
 }
 
 clear
-#=====================================================================
-#======================================================================
 #GANTI PASSWORD DEFAULT
 restart_system() {
 USRSC=$(wget -qO- https://raw.githubusercontent.com/titis69/permission/main/alfa | grep $ipsaya | awk '{print $2}')
