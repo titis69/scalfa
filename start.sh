@@ -267,73 +267,27 @@ clear
 }
 
 clear
+#=====================================================================
+#======================================================================
 #GANTI PASSWORD DEFAULT
-restart_system(){
-#IZIN SCRIPT
-curl "ipinfo.io/org?token=7a814b6263b02c" > /root/.isp 
-curl "ipinfo.io/city?token=7a814b6263b02c" > /root/.city
-MYIP=$(curl -sS ipv4.icanhazip.com)
-echo -e "\e[32mloading...\e[0m" 
-clear
-izinsc="https://raw.githubusercontent.com/titis69/permission/main/alfa"
-# USERNAME
-rm -f /usr/bin/user
-username=$(curl $izinsc | grep $MYIP | awk '{print $2}')
-echo "$username" >/usr/bin/user
-expx=$(curl $izinsc | grep $MYIP | awk '{print $3}')
-echo "$expx" >/usr/bin/e
-# DETAIL ORDER
-username=$(cat /usr/bin/user)
-oid=$(cat /usr/bin/ver)
-exp=$(cat /usr/bin/e)
-clear
-# CERTIFICATE STATUS
-d1=$(date -d "$valid" +%s)
-d2=$(date -d "$today" +%s)
-certifacate=$(((d1 - d2) / 86400))
-# VPS Information
-DATE=$(date +'%Y-%m-%d')
-datediff() {
-    d1=$(date -d "$1" +%s)
-    d2=$(date -d "$2" +%s)
-    echo -e "$COLOR1 $NC Expiry In   : $(( (d1 - d2) / 86400 )) Days"
-}
-mai="datediff "$Exp" "$DATE""
-
-# Status Expired Active
-Info="(${green}Active${NC})"
-Error="(${RED}ExpiRED${NC})"
-today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl $izinsc | grep $MYIP | awk '{print $4}')
-if [[ $today < $Exp1 ]]; then
-sts="${Info}"
-else
-sts="${Error}"
-fi
-TIMES="10"
-#CHATID="1469244768"
-#KEY="7035119506:AAEatu58omJunqReXanKi1mRZZgAcFkE7XQ"
-#URL="https://api.telegram.org/bot$KEY/sendMessage"
-ISP=$(cat /root/.isp)
-CITY=$(cat /root/.city)
+restart_system() {
+USRSC=$(wget -qO- https://raw.githubusercontent.com/titis69/permission/main/alfa | grep $ipsaya | awk '{print $2}')
+EXPSC=$(wget -qO- https://raw.githubusercontent.com/titis69/permission/main/alfa | grep $ipsaya | awk '{print $3}')
 TIMEZONE=$(printf '%(%H:%M:%S)T')
-    TEXT="
+TEXT="
 <code>────────────────────</code>
-<b>⚡𝗡𝗢𝗧𝗜𝗙 𝗜𝗡𝗦𝗧𝗔𝗟𝗟 𝗦𝗖𝗥𝗜𝗣𝗧⚡</b>
+<b> 🟢 DONE SEWA AUTOSCRIPT 🟢</b>
 <code>────────────────────</code>
-<code>User     :</code><code>$username</code>
-<code>ISP      :</code><code>$ISP</code>
-<code>CITY     :</code><code>$CITY</code>
-<code>DATE     :</code><code>$DATE</code>
-<code>Time     :</code><code>$TIMEZONE</code>
-<code>Exp Sc.  :</code><code>$exp</code>
-<code>─────────────────────────────</code>
-<b>   BERLIAN VPN STORE SCRIPT     </b>
-<code>─────────────────────────────</code>
-<i>Automatic Notifications From Github</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"t.me/ohmyvillain"}]]}' 
-
-    curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
+<code>ID     : </code><code>$USRSC</code>
+<code>Domain : </code><code>$domain</code>
+<code>Date   : </code><code>$TIME</code>
+<code>Time   : </code><code>$TIMEZONE</code>
+<code>Ip vps : </code><code>$ipsaya</code>
+<code>Exp Sc : </code><code>$EXPSC</code>
+<code>────────────────────</code>
+<i>Automatic Notification from Github</i>
+#"'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ","url":"https://t.me/denisastore32"},{"text":"Contack","url":"https://t.me/denisastore32"}]]}'
+#curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 }
 clear
 # Pasang SSL
