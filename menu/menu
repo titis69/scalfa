@@ -247,7 +247,7 @@ let trb=$trx/2
 # \\ shadowsocks account //
 ssx=$(grep -c -E "^#!# " "/etc/xray/config.json")
 let ssa=$ssx/2
-jumlah_noobz=$(grep -c -E "^### " "/etc/xray/noob")
+# //jumlah_noobz=$(grep -c -E "^### " "/etc/xray/noob")
 # // DENISA | NB PROJECT
 # // WHATSAPP : 082380835972
 # // TELEGRAM : @denisastore32
