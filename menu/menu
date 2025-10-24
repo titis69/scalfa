@@ -340,7 +340,7 @@ echo -e " \033[96;1m      ══════════════════
 
 
 echo -e " ${NC} ╭════════════════════════════════════════════════════════════════╮"
-echo -e " ${NC} │${bwhite}\033[41m                   Welcome To Script $(cat /etc/xray/username)                    ${NC}│"
+echo -e " ${NC} │${bwhite}\033[41m                   Welcome To Script berlian                    ${NC}│"
 echo -e " ${NC} ╰════════════════════════════════════════════════════════════════╯"
 echo -e " $COLOR1 ╭════════════════════════════════════════════════════════════════╮"
 echo -e " $COLOR1 │$BRED ● ${bblue}SYSTEM OS ${bwhite}   : ${NC}$MODEL${NC}"
