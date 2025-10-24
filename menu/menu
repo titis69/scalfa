@@ -389,23 +389,23 @@ echo -e ""
 case $opt in
 1 | 01)
 clear     
-m-ssh
+m-sshws
 ;;
 2 | 02)
 clear
-m-vme
+m-vmess
 ;;
 3 | 03)
 clear
-m-vle
+m-vless
 ;;
 4 | 04)
 clear
-m-tro
+m-trojan
 ;;
 5 | 05)
 clear
-m-ssr
+m-ssws
 ;;
 6 | 06)
 clear
@@ -413,7 +413,7 @@ sd
 ;;
 7 | 07)
 clear
-nmenu
+m-noob
 ;;
 8 | 08)
 clear
@@ -423,7 +423,7 @@ chmod +x update.sh
 ;;
 9 | 09)
 clear
-m-ftr
+menu-x
 ;;
 10)
 clear
