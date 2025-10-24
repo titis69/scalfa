@@ -141,12 +141,12 @@ fi
 ######################################
 # // USERNAME IZIN IPP
 rm -f /usr/bin/user
-username=$(curl -sS https://raw.githubusercontent.com/titis69/permission/main/sctitis | grep $MYIP | awk '{print $2}')
+username=$(curl -sS https://raw.githubusercontent.com/titis69/permission/main/alfa | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
 rm -f /usr/bin/e
-valid=$(curl -sS https://raw.githubusercontent.com/titis69/permission/main/sctitis | grep $MYIP | awk '{print $3}')
+valid=$(curl -sS https://raw.githubusercontent.com/titis69/permission/main/alfa | grep $MYIP | awk '{print $3}')
 echo "$valid" > /usr/bin/e
-izinsc="https://raw.githubusercontent.com/titis69/permission/main/sctitis"
+izinsc="https://raw.githubusercontent.com/titis69/permission/main/alfa"
 clear
 ######################################
 # // DETAIL ORDER IZIN IP
