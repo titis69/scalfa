@@ -189,7 +189,7 @@ xray_service=$(systemctl status xray | grep Active | awk '{print $3}' | cut -d "
 nginx_service=$(systemctl status nginx | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 
 clear
-export sem=$( curl -s https://raw.githubusercontent.com/FasterExE/VIP-Autoscript/main/versions)
+export sem=$( curl -s https://raw.githubusercontent.com/titis69/scalfa/main/versi)
 export pak=$( cat /home/.ver)
 IPVPS=$(curl -s ipinfo.io/ip )
 ######################################
