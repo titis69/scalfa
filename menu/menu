@@ -76,9 +76,7 @@ echo -e "${green} =============================== ${FONT}"
 sleep 2
 fi
 }
-export sem=$( curl -s https://raw.githubusercontent.com/titis69/scalfa/main/versi)
-export pak=$( cat /home/.ver)
-IPVPS=$(curl -s ipinfo.io/ip )
+
 clear
 
 function Rename() {
