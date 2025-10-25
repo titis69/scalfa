@@ -418,7 +418,7 @@ m-noob
 ;;
 8 | 08)
 clear
-wget -q https://raw.githubusercontent.com/titis69/sctitis/main/update.sh
+wget -q https://raw.githubusercontent.com/titis69/scalfa/main/update.sh
 chmod +x update.sh
 ./update.sh
 ;;
@@ -460,4 +460,3 @@ menu
 menu
 ;;
 esac
-
