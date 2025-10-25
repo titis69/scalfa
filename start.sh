@@ -254,11 +254,13 @@ read -p "   Subdomain: " host1
 echo "IP=" >> /var/lib/kyt/ipvps.conf
 echo $host1 > /etc/xray/domain
 echo $host1 > /root/domain
+echo "BERLIAN" > /etc/xray/username
 echo ""
 elif [[ $host == "2" ]]; then
 #install cf
 wget ${REPO}files/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
+echo "BERLIAN" > /etc/xray/username
 clear
 else
 print_install "Random Subdomain/Domain is Used"
