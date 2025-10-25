@@ -387,7 +387,7 @@ echo -e " $COLOR1 ╰═══════════════════�
 echo -e " ${NC} ╭════════════════════════════════════════════════════════════════╮"
 echo -e " ${NC} │${bwhite} Clients Name  :${NC} $(cat /usr/bin/user)"                     
 echo -e " ${NC} │${bwhite} Masa Aktif    :${YELL} $(((d1 - d2) / 86400)) Hari${NC}/${YELL}$useexp $sts"       
-echo -e "        ${BICyan}│$NC Version       : $(cat /opt/.ver) Last Update ${NC}"
+echo -e "        ${BICyan}│$NC Version       : $( cat /home/.ver) Last Update ${NC}"
 echo -e " ${NC} ╰════════════════════════════════════════════════════════════════╯"
 echo -e " "
 read -p "  Options [ 1 - 15 ] ❱❱❱ " opt
