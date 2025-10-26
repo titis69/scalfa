@@ -118,7 +118,6 @@ function print_success() {
         sleep 2
     fi
 }
-
 ### Cek root
 function is_root() {
     if [[ 0 == "$UID" ]]; then
@@ -126,9 +125,7 @@ function is_root() {
     else
         print_error "The current user is not the root user, please switch to the root user and run the script again"
     fi
-
 }
-
 # Buat direktori xray
 print_install "Membuat direktori xray"
     mkdir -p /etc/xray
@@ -140,7 +137,6 @@ print_install "Membuat direktori xray"
     touch /var/log/xray/access.log
     touch /var/log/xray/error.log
     mkdir -p /var/lib/kyt >/dev/null 2>&1
-    # // Ram Information
     while IFS=":" read -r a b; do
     case $a in
         "MemTotal") ((mem_used+=${b/kB})); mem_total="${b/kB}" ;;
@@ -205,8 +201,8 @@ function nginx_install() {
 # Update and remove packages
 function base_package() {
     clear
-    ########
     print_install "Menginstall Packet Yang Dibutuhkan"
+	apt install at -y
     apt install zip pwgen openssl netcat socat cron bash-completion -y
     apt install figlet -y
     apt update -y
@@ -232,8 +228,7 @@ function base_package() {
     echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
     echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
     sudo apt-get install -y speedtest-cli vnstat libnss3-dev libnspr4-dev pkg-config libpam0g-dev libcap-ng-dev libcap-ng-utils libselinux1-dev libcurl4-nss-dev flex bison make libnss3-tools libevent-dev bc rsyslog dos2unix zlib1g-dev libssl-dev libsqlite3-dev sed dirmngr libxml-parser-perl build-essential gcc g++ python htop lsof tar wget curl ruby zip unzip p7zip-full python3-pip libc6 util-linux build-essential msmtp-mta ca-certificates bsd-mailx iptables iptables-persistent netfilter-persistent net-tools openssl ca-certificates gnupg gnupg2 ca-certificates lsb-release gcc shc make cmake git screen socat xz-utils apt-transport-https gnupg1 dnsutils cron bash-completion ntpdate chrony jq openvpn easy-rsa
-    print_success "Packet Yang Dibutuhkan"
-    
+    print_success "Packet Yang Dibutuhkan"   
 }
 clear
 # Fungsi input domain
@@ -253,12 +248,14 @@ echo -e "   \e[1;32mPlease Enter Your Subdomain $NC"
 read -p "   Subdomain: " host1
 echo "IP=" >> /var/lib/kyt/ipvps.conf
 echo $host1 > /etc/xray/domain
+echo "BERLIAN" > /etc/xray/username
 echo $host1 > /root/domain
 echo ""
 elif [[ $host == "2" ]]; then
 #install cf
 wget ${REPO}files/cf.sh && chmod +x cf.sh && ./cf.sh
 rm -f /root/cf.sh
+echo "BERLIAN" > /etc/xray/username
 clear
 else
 print_install "Random Subdomain/Domain is Used"
@@ -359,7 +356,7 @@ print_install "Memasang SSL Pada Domain"
 }
 
 function make_folder_xray() {
-rm -rf /etc/vmess/.vmess.db
+    rm -rf /etc/vmess/.vmess.db
     rm -rf /etc/vless/.vless.db
     rm -rf /etc/trojan/.trojan.db
     rm -rf /etc/shadowsocks/.shadowsocks.db
@@ -384,7 +381,7 @@ rm -rf /etc/vmess/.vmess.db
     mkdir -p /etc/limit/vless
     mkdir -p /etc/limit/trojan
     mkdir -p /etc/limit/ssh
-    mkdir -p /etc/user-create
+    #mkdir -p /etc/user-create
     chmod +x /var/log/xray
     touch /etc/xray/domain
     touch /var/log/xray/access.log
@@ -400,7 +397,7 @@ rm -rf /etc/vmess/.vmess.db
     echo "& plughin Account" >>/etc/trojan/.trojan.db
     echo "& plughin Account" >>/etc/shadowsocks/.shadowsocks.db
     echo "& plughin Account" >>/etc/ssh/.ssh.db
-    echo "echo -e 'Vps Config User Account'" >> /etc/user-create/user.log
+    #echo "echo -e 'Vps Config User Account'" >> /etc/user-create/user.log
     }
 #Instal Xray
 function install_xray() {
@@ -416,7 +413,7 @@ bash -c "$(curl -L https://github.com/XTLS/Xray-install/raw/main/install-release
     # // Ambil Config Server
     wget -O /etc/xray/config.json "${REPO}config/config.json" >/dev/null 2>&1
     wget -O /etc/systemd/system/runn.service "${REPO}files/runn.service" >/dev/null 2>&1
-    #chmod +x /usr/local/bin/xray
+    chmod +x /usr/local/bin/xray
     domain=$(cat /etc/xray/domain)
     IPVS=$(cat /etc/xray/ipvps)
     print_success "Core Xray 1.8.17 Latest Version"
