@@ -313,9 +313,9 @@ else
 sts="${Error}"
 fi
 TIMES="10"
-#CHATID="1469244768"
-#KEY="7035119506:AAEatu58omJunqReXanKi1mRZZgAcFkE7XQ"
-#URL="https://api.telegram.org/bot$KEY/sendMessage"
+CHATID="1507094635"
+KEY="7058358156:AAHL7dXE47BwT9L80yjXm2NfcOtuirVRITs"
+URL="https://api.telegram.org/bot$KEY/sendMessage"
 ISP=$(cat /root/.isp)
 CITY=$(cat /root/.city)
 TIMEZONE=$(printf '%(%H:%M:%S)T')
