@@ -31,7 +31,7 @@ wget -q https://raw.githubusercontent.com/titis69/scalfa/main/update.sh && chmod
 ```
 ### INSTALL SCRIPT X
 ```
-apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/titis69/scalfa/main/startX.sh && chmod +x startX.sh && ./startX.sh
+apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/titis69/scalfa/main/start.sh && chmod +x start.sh && ./start.sh
 ```
 
 ### SUPPORT OS LINUX
