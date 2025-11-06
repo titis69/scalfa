@@ -160,36 +160,30 @@ print_install "Membuat direktori xray"
 
 # Change Environment System
 function first_setup(){
-    # Mengatur zona waktu dan konfigurasi dasar firewall
     timedatectl set-timezone Asia/Jakarta
     echo iptables-persistent iptables-persistent/autosave_v4 boolean true | debconf-set-selections
     echo iptables-persistent iptables-persistent/autosave_v6 boolean true | debconf-set-selections
-
-    # Memperbarui daftar paket sistem
-    echo "Updating package lists..."
-    apt-get update -y
-
-    # Mendeteksi OS dan menginstal dependensi
-    OS_ID=$(grep -w ID /etc/os-release | head -n1 | sed 's/ID=//;s/"//g')
-    OS_PRETTY_NAME=$(grep -w PRETTY_NAME /etc/os-release | head -n1 | sed 's/PRETTY_NAME=//;s/"//g')
-
-    if [[ "$OS_ID" == "ubuntu" || "$OS_ID" == "debian" ]]; then
-        echo "Setup Dependencies for $OS_PRETTY_NAME"
-        # Instal HAProxy dari repositori resmi (versi modern sudah tersedia)
-        apt-get install -y haproxy
-        if [ $? -eq 0 ]; then
-            echo "HAProxy successfully installed."
-            haproxy -v
-        else
-            echo "Failed to install HAProxy."
-            exit 1
-        fi
-    else
-        echo -e "Your OS Is Not Supported ($OS_PRETTY_NAME)"
-        exit 1
-    fi
+    print_success "Directory Xray"
+    if [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "ubuntu" ]]; then
+    echo "Setup Dependencies $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
+    sudo apt update -y
+    apt-get install --no-install-recommends software-properties-common
+    add-apt-repository ppa:vbernat/haproxy-2.0 -y
+    apt-get -y install haproxy=2.0.\*
+elif [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "debian" ]]; then
+    echo "Setup Dependencies For OS Is $(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')"
+    curl https://haproxy.debian.net/bernat.debian.org.gpg |
+        gpg --dearmor >/usr/share/keyrings/haproxy.debian.net.gpg
+    echo deb "[signed-by=/usr/share/keyrings/haproxy.debian.net.gpg]" \
+        http://haproxy.debian.net buster-backports-1.8 main \
+        >/etc/apt/sources.list.d/haproxy.list
+    sudo apt-get update
+    apt-get -y install haproxy=1.8.\*
+else
+    echo -e " Your OS Is Not Supported ($(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g') )"
+    exit 1
+fi
 }
-
 # GEO PROJECT
 clear
 function nginx_install() {
