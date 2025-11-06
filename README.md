@@ -22,7 +22,7 @@ service ssh reload
 
 ### INSTALL SCRIPT 
 ```
-apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/titis69/scalfa/main/start.sh && chmod +x start.sh && ./start.sh
+apt install -y && apt update -y && apt upgrade -y && wget -q https://raw.githubusercontent.com/titis69/scalfa/main/startX.sh && chmod +x startX.sh && ./startX.sh
 ```
 
 ## UPDATE SCRIPT
